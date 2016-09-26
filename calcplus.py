@@ -10,17 +10,17 @@ if __name__ == "__main__":
 	#fichero = sys.argv[1]
 	with open('fichero.csv') as fichero:
 		lineas = csv.reader(fichero)
+
 		c = calcoohija.CalculadoraHija()
 				
 		for linea in fichero:
 			operador = linea.split(',')[0]
 			sumandos = linea.split(',')[1:]
-			print(linea)
-			
-			##for palabra in linea:
+			solucion = int(sumandos[0])
 
-				##sumandos = []
-				##sumandos = next(lineas)
-				##print(sumandos)
+			if operador == "suma":
+				for i in sumandos[1:]:
+					solucion = c.plus(solucion, int(i))
+				print(solucion)
+					
 			
-				##if sumandos[1] =
