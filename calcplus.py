@@ -7,9 +7,9 @@ import calcoohija
 
 if __name__ == "__main__":
 	
-	#fichero = sys.argv[1]
+	#with open(sys.argv[1]) as fichero: Con esto consigo que me coja un fichero de cualquier extension, lo unico que a la hora de llamarlo en la shell hay que poner la extension
 	with open('fichero.csv') as fichero:
-		lineas = csv.reader(fichero)
+		fich = csv.reader(fichero)
 
 		c = calcoohija.CalculadoraHija()
 				
