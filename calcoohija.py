@@ -5,12 +5,12 @@ import sys
 import calcoo
 
 class CalculadoraHija(calcoo.Calculadora):
-	def multiply(op1, op2):
+	def multiply(self, op1, op2):
 		""" Function to multiply the operands """
 		return op1 * op2
 
 
-	def division(op1, op2):
+	def division(self, op1, op2):
 		""" Function to division the operands """
 		try:
 			cociente = op1 / op2	
