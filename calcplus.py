@@ -2,18 +2,17 @@
 # -*- coding: utf-8 -*-
 
 import sys
-import csv
 import calcoohija
 
 if __name__ == "__main__":
 	
-	#with open(sys.argv[1]) as fichero: Con esto consigo que me coja un fichero de cualquier extension, lo unico que a la hora de llamarlo en la shell hay que poner la extension
-	with open('fichero.csv') as fichero:
-		fich = csv.reader(fichero)
+	fichero1 = sys.argv[1]
+	fichero = open(fichero1, 'r')
+	datos = fichero.readlines()
 
-		c = calcoohija.CalculadoraHija()
+	c = calcoohija.CalculadoraHija()
 				
-		for linea in fichero:
+		for linea in datos:
 			operador = linea.split(',')[0]
 			sumandos = linea.split(',')[1:]
 			solucion = int(sumandos[0])
@@ -40,4 +39,3 @@ if __name__ == "__main__":
 
 			else:
 				sys.exit('Operación sólo puede ser sumar, restar, multiplicar o dividir.')
-			
