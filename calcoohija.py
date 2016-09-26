@@ -16,7 +16,7 @@ class CalculadoraHija(calcoo.Calculadora):
 			cociente = op1 / op2	
 		except ZeroDivisionError:
 			sys.exit("Error: Division by zero is not allowed")
-			return cociente
+		return cociente
 
 if __name__ == "__main__":
 	try:
@@ -25,14 +25,16 @@ if __name__ == "__main__":
 	except ValueError:
 		sys.exit("Error: Non numerical parameters")
 
+	c = CalculadoraHija()
+
 	if sys.argv[2] == "suma":
-		result = CalculadoraHija.plus(operando1, operando2)
+		result = c.plus(operando1, operando2)
 	elif sys.argv[2] == "resta":
-		result = CalculadoraHija.minus(operando1, operando2)
+		result = c.minus(operando1, operando2)
 	elif sys.argv[2] == "multiplica":
-		result = CalculadoraHija.multiply(operando1, operando2)
+		result = c.multiply(operando1, operando2)
 	elif sys.argv[2] == "divide":
-		result = CalculadoraHija.division(operando1, operando2)
+		result = c.division(operando1, operando2)
 	else:
 		sys.exit('Operación sólo puede ser sumar, restar, multiplicar o dividir.')
 
